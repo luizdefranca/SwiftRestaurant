@@ -13,10 +13,10 @@ class ExploreViewController: UIViewController{
 
 
     @IBOutlet weak var collectionView: UICollectionView!
-
+    private let manager : ExploreDataManager = ExploreDataManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+//        setupCollectionView()
 
     }
     
@@ -48,11 +48,13 @@ extension ExploreViewController: UICollectionViewDataSource {
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return manager.numberOfItems()
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCell", for: indexPath) as! ExplorerCollectionViewCell
+        cell.exploreItem = manager.explore(at: indexPath)
+        return cell
     }
 
     @IBAction func unwindLocationCancel(segue: UIStoryboardSegue) {
