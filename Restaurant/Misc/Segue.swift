@@ -16,4 +16,5 @@ enum Segue: String {
     case restaurantList
     case locationList
     case showPhotoReview
+    case showDetailAfterRestaurantList
 }

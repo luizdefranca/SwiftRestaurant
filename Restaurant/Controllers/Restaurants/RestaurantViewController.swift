@@ -61,6 +61,24 @@ class RestaurantViewController: UIViewController {
         self.restaurantCollectionView.delegate = self
         self.restaurantCollectionView.dataSource = self
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let indexPath = restaurantCollectionView.indexPathsForSelectedItems?.first else {
+            print("There is not selected indexPath")
+            return
+        }
+        selectedRestaurant = manager.restaurantItem(at: indexPath)
+        switch segue.identifier {
+        case Segue.showDetailAfterRestaurantList.rawValue:
+            if let nc = segue.destination as? UINavigationController, let vc = nc.topViewController as? RestaurantDetailViewController, let restaurant = selectedRestaurant {
+                vc.selectedRestaurant = restaurant
+                dump(selectedRestaurant)
+            }
+        default:
+            print("There is not segue")
+        }
+    }
 }
 
 extension RestaurantViewController: UICollectionViewDataSource {
@@ -80,5 +98,5 @@ extension RestaurantViewController: UICollectionViewDataSource {
 }
 
 extension RestaurantViewController: UICollectionViewDelegate {
-  
+
 }

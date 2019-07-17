@@ -35,22 +35,22 @@ class RestaurantDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("##############################")
+        print("############################## \(self) #######################")
         dump(selectedRestaurant as Any)
 
         btnHeart.setTitleTextAttributes([
             NSAttributedString.Key.font: UIFont(name: "Helvetica-Bold", size: 26.0)!],
                                           for: .normal)
-        setupAll()
+//        setupAll()
     }
 
     @IBAction func back(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
 
-
-
-   
+    override func viewWillAppear(_ animated: Bool) {
+        setupAll()
+    }
 
     func setupAll(){
         setupLabels()

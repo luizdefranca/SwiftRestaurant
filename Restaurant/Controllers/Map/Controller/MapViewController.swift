@@ -45,7 +45,6 @@ class MapViewController: UIViewController {
             if let nc = segue.destination as? UINavigationController, let vc = nc.topViewController as? RestaurantDetailViewController, let restaurant = selectedRestaurant {
                 vc.selectedRestaurant = restaurant
                 dump(selectedRestaurant)
-                print(selectedRestaurant)
             }
         default:
             print("Need to add a segue")

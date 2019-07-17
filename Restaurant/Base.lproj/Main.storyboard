@@ -371,7 +371,7 @@
                                             <outlet property="imgRestaurant" destination="o9H-Ib-CBk" id="YAn-na-QOF"/>
                                             <outlet property="lblCuisine" destination="R2Q-q4-z9y" id="wJm-Hr-YeL"/>
                                             <outlet property="lblTitle" destination="Vhg-bj-7cd" id="s0K-gZ-ysN"/>
-                                            <segue destination="vxb-eb-SzE" kind="show" id="1Ey-t7-zzP"/>
+                                            <segue destination="YyD-7D-8uY" kind="presentation" identifier="showDetailAfterRestaurantList" id="VZO-Kg-1CI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -635,5 +635,8 @@
             <color red="0.9882352941176471" green="0.17647058823529413" blue="0.10980392156862745" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VZO-Kg-1CI"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="FaF Red"/>
 </document>
