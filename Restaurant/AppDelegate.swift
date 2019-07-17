@@ -15,8 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        setupDefaultColors()
         return true
     }
 
@@ -89,5 +90,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate {
+
+    func setupDefaultColors() {
+        guard let red = UIColor(named: "FaF Red") else {return}
+        UITabBar.appearance().tintColor = red
+        UITabBar.appearance().barTintColor = .white
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.black], for: UIControl.State.normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: red], for: UIControl.State.selected)
+        UINavigationBar.appearance().tintColor = red
+        UINavigationBar.appearance().barTintColor = .white
+        UITabBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().isTranslucent = false
+    }
 }
 
