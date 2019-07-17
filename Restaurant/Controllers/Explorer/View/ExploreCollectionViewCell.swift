@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExplorerCollectionViewCell: UICollectionViewCell {
+class ExploreCollectionViewCell: UICollectionViewCell {
     var exploreItem : ExploreItem? {
         didSet {
             imgExplore.image = UIImage(named: self.exploreItem!.image)
@@ -18,4 +18,12 @@ class ExplorerCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgExplore: UIImageView!
     @IBOutlet weak var lblName: UILabel!
 
+    func roundedCorners() {
+        imgExplore.layer.cornerRadius = 9
+        imgExplore.layer.masksToBounds = true
+    }
+
+    override func layoutSubviews() {
+        roundedCorners()
+    }
 }

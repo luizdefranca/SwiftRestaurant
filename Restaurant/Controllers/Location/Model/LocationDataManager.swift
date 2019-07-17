@@ -8,7 +8,7 @@
 
 import Foundation
 class LocationDataManager {
-    private var locations: [String] = []
+    private var locations: [LocationItem] = []
 
 
     init() {
@@ -17,9 +17,7 @@ class LocationDataManager {
 
     private func fetch() {
         for location in loadData() {
-            if let city = location["city"], let state = location["state"] {
-                locations.append("\(city), \(state)")
-            }
+            locations.append(LocationItem(dict: location))
         }
     }
 
@@ -27,7 +25,7 @@ class LocationDataManager {
         return locations.count
     }
 
-    func location(at index: IndexPath) -> String {
+    func location(at index: IndexPath) -> LocationItem {
         return locations[index.row]
     }
     
@@ -37,5 +35,10 @@ class LocationDataManager {
         }
 
         return items as! [JsonObject]
+    }
+
+    func findLocation(By name: String) -> (isFound: Bool, position: Int) {
+        guard let index = locations.firstIndex(where: {$0.city == name}) else { return (isFound: false, position: 0) }
+        return (isFound: true, position: index)
     }
 }

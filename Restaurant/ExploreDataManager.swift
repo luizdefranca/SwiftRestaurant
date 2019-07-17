@@ -25,7 +25,7 @@ class ExploreDataManager : DataManager {
         return items.count
     }
 
-    func explore(at index: IndexPath) -> ExploreItem {
+    func explore(at index: IndexPath) -> ExploreItem? {
         return items[index.item]
     }
 }

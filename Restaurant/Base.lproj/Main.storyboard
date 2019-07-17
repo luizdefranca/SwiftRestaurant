@@ -68,7 +68,7 @@
                                     <inset key="sectionInset" minX="7" minY="11" maxX="7" maxY="7"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exploreCell" id="GDa-12-uzJ" customClass="ExplorerCollectionViewCell" customModule="Restaurant" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="exploreCell" id="GDa-12-uzJ" customClass="ExploreCollectionViewCell" customModule="Restaurant" customModuleProvider="target">
                                         <rect key="frame" x="7" y="111" width="165" height="195"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -84,6 +84,7 @@
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                     <integer key="value" value="16"/>
                                                                 </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
@@ -119,11 +120,11 @@
                                         <connections>
                                             <outlet property="imgExplore" destination="WQ0-15-edB" id="MJa-cT-Tqe"/>
                                             <outlet property="lblName" destination="9JO-it-7C9" id="Niq-Kx-OYD"/>
-                                            <segue destination="VDG-lZ-8hp" kind="show" id="FPM-Y2-ce4"/>
+                                            <segue destination="VDG-lZ-8hp" kind="show" identifier="restaurantList" id="FPM-Y2-ce4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="NvL-21-s6N">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="header" id="NvL-21-s6N" customClass="ExploreHeaderView" customModule="Restaurant" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -138,7 +139,7 @@
                                                     </constraints>
                                                     <state key="normal" image="btn-location"/>
                                                     <connections>
-                                                        <segue destination="ujq-z3-qLS" kind="presentation" id="AA0-yZ-iHM"/>
+                                                        <segue destination="ujq-z3-qLS" kind="presentation" identifier="locationList" id="AA0-yZ-iHM"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select A Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1q0-Fk-gyd">
@@ -190,6 +191,9 @@
                                         <constraint firstItem="yIN-43-MBd" firstAttribute="top" secondItem="NvL-21-s6N" secondAttribute="top" id="Z0N-BM-cXR"/>
                                         <constraint firstAttribute="trailing" secondItem="yIN-43-MBd" secondAttribute="trailing" id="Z0a-v2-efj"/>
                                     </constraints>
+                                    <connections>
+                                        <outlet property="lblLocation" destination="1q0-Fk-gyd" id="LgR-Mc-6cy"/>
+                                    </connections>
                                 </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="FYI-PG-Fm1" id="wf3-IA-t8s"/>
@@ -234,7 +238,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="4Ab-hi-Pdt">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="restaurantCell" id="4Ab-hi-Pdt" customClass="RestaurantCell" customModule="Restaurant" customModuleProvider="target">
                                         <rect key="frame" x="19.5" y="0.0" width="375" height="312"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -364,6 +368,9 @@
                                         </constraints>
                                         <size key="customSize" width="375" height="312"/>
                                         <connections>
+                                            <outlet property="imgRestaurant" destination="o9H-Ib-CBk" id="YAn-na-QOF"/>
+                                            <outlet property="lblCuisine" destination="R2Q-q4-z9y" id="wJm-Hr-YeL"/>
+                                            <outlet property="lblTitle" destination="Vhg-bj-7cd" id="s0K-gZ-ysN"/>
                                             <segue destination="vxb-eb-SzE" kind="show" id="1Ey-t7-zzP"/>
                                         </connections>
                                     </collectionViewCell>
@@ -484,15 +491,15 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" textLabel="Don-dv-djc" style="IBUITableViewCellStyleDefault" id="zSO-df-kZV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" textLabel="Don-dv-djc" style="IBUITableViewCellStyleDefault" id="zSO-df-kZV">
                                         <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zSO-df-kZV" id="qXW-vU-fpC">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Don-dv-djc">
-                                                    <rect key="frame" x="20" y="0.0" width="356" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -519,7 +526,11 @@
                                 <segue destination="c2q-nL-mFD" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="1SA-zA-9SA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="Tr9-Lb-Zky"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" style="done" id="Tr9-Lb-Zky">
+                            <connections>
+                                <segue destination="c2q-nL-mFD" kind="unwind" unwindAction="unwindLocationCancelWithSegue:" id="yuk-Dw-N0G"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="locationTableView" destination="4iX-xs-pwo" id="sYx-ch-fQH"/>
