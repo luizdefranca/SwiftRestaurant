@@ -19,7 +19,7 @@ class ExploreViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        setupCollectionView()
+        setupCollectionView()
 
     }
 
@@ -54,9 +54,13 @@ class ExploreViewController: UIViewController{
     
     func setupCollectionView(){
         let layout = UICollectionViewFlowLayout()
-        layout.headerReferenceSize = CGSize(width: 0, height: 100)
-        layout.sectionHeadersPinToVisibleBounds = true
+        layout.sectionInset = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 7
         collectionView.collectionViewLayout = layout
+//        layout.headerReferenceSize = CGSize(width: 0, height: 100)
+//        layout.sectionHeadersPinToVisibleBounds = true
+//        collectionView.collectionViewLayout = layout
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
     }
@@ -91,7 +95,9 @@ private extension ExploreViewController {
 }
 
 extension ExploreViewController: UICollectionViewDelegate {
-
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.reloadData()
+    }
 }
 
 extension ExploreViewController: UICollectionViewDataSource {
@@ -126,5 +132,27 @@ extension ExploreViewController: UICollectionViewDataSource {
                 headerView.lblLocation.text = location.city
             }
         }
+    }
+}
+
+extension ExploreViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if Device.isPad {
+            let factor = traitCollection.horizontalSizeClass == .compact ? 2 : 3
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - ( 7.0 * CGFloat(factor + 1))
+            let cellWidth = screenRect / CGFloat(factor)
+            return CGSize(width: cellWidth, height: 195)
+        } else {
+            let screenRect = collectionView.frame.size.width
+            let screenWidth = screenRect - 21
+            let cellWidth = screenWidth / 2
+            return CGSize(width: cellWidth, height: 195)
+        }
+
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: self.collectionView.frame.width, height: 100)
     }
 }
