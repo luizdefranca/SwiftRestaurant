@@ -18,6 +18,8 @@ class LocationViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         self.locationTableView.dataSource = self
         self.locationTableView.delegate = self
+        title = "Select a Location"
+        navigationController?.navigationBar.prefersLargeTitles = true
 
     }
 
