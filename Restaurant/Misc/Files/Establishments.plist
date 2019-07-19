@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Quick Bites</string>
+		<key>image</key>
+		<string>quick_bites</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bar</string>
+		<key>image</key>
+		<string>bar</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Food Court</string>
+		<key>image</key>
+		<string>food_court</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Casual Dining</string>
+		<key>image</key>
+		<string>casual_dining</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Café</string>
+		<key>image</key>
+		<string>cafe</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sandwich Shop</string>
+		<key>image</key>
+		<string>sandwich_shop</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Beverage Shop</string>
+		<key>image</key>
+		<string>beverage_shop</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Dessert Parlour</string>
+		<key>image</key>
+		<string>dessert_parlour</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Fast Food</string>
+		<key>image</key>
+		<string>fast_food</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bakery</string>
+		<key>image</key>
+		<string>bakery</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Coffee Shop</string>
+		<key>image</key>
+		<string>coffee_shop</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Fast Casual</string>
+		<key>image</key>
+		<string>fast_casual</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pub</string>
+		<key>image</key>
+		<string>pub</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Fine Dining</string>
+		<key>image</key>
+		<string>fine_dining</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Juice Bar</string>
+		<key>image</key>
+		<string>juice_bar</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Lounge</string>
+		<key>image</key>
+		<string>lounge</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Club</string>
+		<key>image</key>
+		<string>club</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Izakaya</string>
+		<key>image</key>
+		<string>izakaya</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Bistro</string>
+		<key>image</key>
+		<string>bistro</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Wine Bar</string>
+		<key>image</key>
+		<string>wine_bar</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Sweet Shop</string>
+		<key>image</key>
+		<string>sweet_shop</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Microbrewery</string>
+		<key>image</key>
+		<string>microbrewery</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Food Truck</string>
+		<key>image</key>
+		<string>food_truck</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Pizzeria</string>
+		<key>image</key>
+		<string>pizzeria</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Beer Garden</string>
+		<key>image</key>
+		<string>beer_garden</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Brewery</string>
+		<key>image</key>
+		<string>brewery</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Cocktail Bar</string>
+		<key>image</key>
+		<string>cocktail_bar</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Noodle Shop</string>
+		<key>image</key>
+		<string>noodle_shop</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Steakhouse</string>
+		<key>image</key>
+		<string>steakhouse</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Ice Cream Shop</string>
+		<key>image</key>
+		<string>ice_cream_shop</string>
+	</dict>
+</array>
+</plist>

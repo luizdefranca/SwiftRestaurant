@@ -11,16 +11,22 @@ import UIKit
 class RestaurantViewController: UIViewController {
 
     @IBOutlet weak var restaurantCollectionView: UICollectionView!
+
     var manager = RestaurantDataManager()
     var selectedRestaurant: RestaurantItem?
     var selectedCity: LocationItem?
     var selectedType: String?
+
+
+    var isMoreDataLoading = false
+    var loadingMoreView: InfiniteScrollActivityView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         createData()
         setupTitle()
+        setupInfiniteScrollLoadingIndicator()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -92,6 +98,7 @@ extension RestaurantViewController: UICollectionViewDataSource {
         return cell
     }
 
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -99,4 +106,41 @@ extension RestaurantViewController: UICollectionViewDataSource {
 
 extension RestaurantViewController: UICollectionViewDelegate {
 
+}
+
+extension RestaurantViewController: UIScrollViewDelegate {
+
+    func setupInfiniteScrollLoadingIndicator(){
+        let frame = CGRect(x: 0, y: restaurantCollectionView.contentSize.height, width: restaurantCollectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.isHidden = true
+        restaurantCollectionView.addSubview(loadingMoreView!)
+
+        var insets = restaurantCollectionView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
+        restaurantCollectionView.contentInset = insets
+    }
+
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if !isMoreDataLoading {
+            //Calculate the position of the screen lenght before the botton of the results
+            let scrollViewContentHeight = restaurantCollectionView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - restaurantCollectionView.bounds.size.height
+
+            //whe the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && restaurantCollectionView.isDragging){
+                isMoreDataLoading = true
+                //update position of loadingMoreView and start loading indicator
+                let frame = CGRect(x: 0, y: restaurantCollectionView.contentSize.height, width: restaurantCollectionView.bounds.size.width, height: InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+
+                //TODO: Code to load more results
+                manager.loadMoreData()
+                
+            }
+
+        }
+    }
 }

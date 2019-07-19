@@ -36,4 +36,8 @@ class RestaurantDataManager {
         let row = index.item
         return items[row]
     }
+
+    func loadMoreData(){
+
+    }
 }
