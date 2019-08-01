@@ -25,6 +25,7 @@ class RestaurantItem: NSObject, MKAnnotation {
     var title: String? {
         return name
     }
+    
     var name: String?
     var cuisines: [String] = []
     var lat : Double?
@@ -35,6 +36,7 @@ class RestaurantItem: NSObject, MKAnnotation {
     var imageURL: String?
 
     init(dict : JsonObject) {
+
         if let lat = dict["lat"] as? Double, let long = dict["long"] as? Double {
             self.lat = lat
             self.long = long

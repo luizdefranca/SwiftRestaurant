@@ -13,7 +13,8 @@ class RestaurantDetailViewController: UITableViewController {
 
 
     var selectedRestaurant: RestaurantItem?
-
+    var startLoading: Int = 0
+    var loadingRestaurant = false
     @IBOutlet weak var btnHeart: UIBarButtonItem!
 
     //Cell One
@@ -129,6 +130,7 @@ private extension RestaurantDetailViewController {
             }
         }
 
+        
     }
 
     func setupRating() {

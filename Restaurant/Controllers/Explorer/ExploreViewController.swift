@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class ExploreViewController: UIViewController{
 
@@ -14,13 +15,18 @@ class ExploreViewController: UIViewController{
 
     @IBOutlet weak var collectionView: UICollectionView!
     private let manager : ExploreDataManager = ExploreDataManager()
+
     var selectedCity: LocationItem?
     var headerView : ExploreHeaderView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-
+        
+        for vc in tabBarController!.viewControllers!  {
+            let t = vc.restorationIdentifier
+            print(t)
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {

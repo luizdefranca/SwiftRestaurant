@@ -35,10 +35,10 @@ struct RestaurantAPIManager {
         return items
     }
 
-    static func fetchRestaurant(byLatitude lat: Double, andLongitude lon: Double, onComplete: @escaping ([JsonObject]? ) -> ()) {
-        var restaurants = [JsonObject]()
-        let url = "https://developers.zomato.com/api/v2.1/search?lat=\(lat)&lon=\(lon)&radius=1000"
-        let request = Alamofire.request("https://mashape-community-urban-dictionary.p.mashape.com/define?term=smh", headers: headers)
+    static func fetchRestaurant(byLatitude lat: Double, andLongitude lon: Double, start: Int = 0, onComplete: @escaping ([Restaurant]? ) -> ()) {
+        var restaurants = [Restaurant]()
+        let url = "https://developers.zomato.com/api/v2.1/search?start=\(start)&count=20&lat=\(lat)&lon=\(lon)&radius=1000&sort=real_distance&order=asc"
+        let request = Alamofire.request(url, headers: headers)
             .responseJSON { response in
 
                 if response.error != nil {
@@ -46,7 +46,8 @@ struct RestaurantAPIManager {
                     onComplete(nil)
                     return
                 }
-                guard let httpResponse = response as? HTTPURLResponse else {
+
+                guard let httpResponse = response.response as? HTTPURLResponse else {
                     print("Response Error: \(#file) - \(#function) - \(#line)")
                     onComplete(nil)
                     return
@@ -72,48 +73,34 @@ struct RestaurantAPIManager {
                     return
                 }
 
-                for restaurantObject in restaurantArray {
-                    
+
+
+                for restaurantObject  in restaurantArray {
+                    if let rest = restaurantObject["restaurant"] as? JsonObject {
+                        let restaurant = Restaurant(dict: rest)
+                        restaurants.append(restaurant)
+                    }
+
                 }
+
+                onComplete(restaurants)
+        }
+
+    }
+
+    func fetchImage(urlImage: String, onComplete: @escaping(UIImage?) ->()) {
+        var imageResponse : UIImage?
+        Alamofire.request(urlImage).responseImage { response in
+
+           
+            guard let image = response.result.value else {
+
+                return
+            }
+
 
         }
 
     }
-}
-
-import Foundation
-protocol JSONDecodable {
-    init (_ decoder: JSONDecoder) throws
-}
-
-typealias JSONObject = [String: Any]
-
-class JSONDecoder
-{
-    let jsonObject: JSONObject
-    init(_ jsonObject: JSONObject)
-    {
-        self.jsonObject = jsonObject
-    }
-}
-
-func parse<T>(_ data: Data) throws -> [T] where T: JSONDecodable
-{
-    let JSONObject: [JSONObject] = try deserialize(data)
-    return try JSONObject.map(decode)
-}
-
-func deserialize(_ data: Data) throws -> [JSONObject]
-{
-    let json = try JSONSerialization.jsonObject(with: data, options: [])
-    guard let objects = json as? [JSONObject] else {
-        return []
-    }
-    return objects
-}
-
-func decode<T>(_ jsonObject: JSONObject) throws -> T where T: JSONDecodable
-{
-    return try T.init(JSONDecoder(jsonObject))
 }
 

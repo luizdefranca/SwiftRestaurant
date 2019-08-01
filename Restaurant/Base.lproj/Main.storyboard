@@ -14,7 +14,7 @@
         <!--Map View Controller-->
         <scene sceneID="pKp-eQ-ydA">
             <objects>
-                <viewController id="ezr-1f-Vh2" customClass="MapViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="mapViewController" id="ezr-1f-Vh2" customClass="MapViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RNI-tV-uz2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -53,7 +53,7 @@
         <!--Explore View Controller-->
         <scene sceneID="Z3D-QA-LAl">
             <objects>
-                <viewController id="FYI-PG-Fm1" customClass="ExploreViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="explorerViewController" id="FYI-PG-Fm1" customClass="ExploreViewController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ti8-tb-RMU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -562,7 +562,7 @@
         <!--Explore-->
         <scene sceneID="pv8-GL-lEI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="76z-2n-Aya" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="explorerNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="76z-2n-Aya" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="icon-explore-off" selectedImage="icon-explore-on" id="Q6R-3A-e3m"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CCc-T0-p4U">
@@ -599,7 +599,7 @@
         <!--Map-->
         <scene sceneID="GOs-04-Q9y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="qAS-SZ-cK6" sceneMemberID="viewController">
+                <navigationController restorationIdentifier="mapNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalTransitionStyle="flipHorizontal" id="qAS-SZ-cK6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Map" image="icon-map-off" selectedImage="icon-map-on" id="WVm-bP-ofV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zva-Kg-tjd">
@@ -636,7 +636,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VZO-Kg-1CI"/>
+        <segue reference="LJf-4p-J9b"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="FaF Red"/>
 </document>

@@ -7,13 +7,14 @@
 //
 
 import UIKit
-
+import MapKit
 class RestaurantViewController: UIViewController {
 
     @IBOutlet weak var restaurantCollectionView: UICollectionView!
 
     var manager = RestaurantDataManager()
-    var selectedRestaurant: RestaurantItem?
+//    var selectedRestaurant: RestaurantItem?
+    var selectedRestaurant: Restaurant?
     var selectedCity: LocationItem?
     var selectedType: String?
 
@@ -25,7 +26,7 @@ class RestaurantViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         createData()
-        setupTitle()
+//        setupTitle()
         setupInfiniteScrollLoadingIndicator()
     }
 
@@ -38,10 +39,11 @@ class RestaurantViewController: UIViewController {
         print("selected type - \(selectedType as Any)")
         print(RestaurantAPIManager.loadJSON(file: location))
     }
-
+//
     func createData() {
-        guard let location = selectedCity?.city, let filter = selectedType else {return }
-        manager.fetch(by: location, withFilter: filter) {
+        guard  let filter = selectedType else {return }
+        let location : CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 43.78514290601886, longitude: -79.42402704637665)
+        manager.fetchRestaurants(by: location, withFilter: filter) {
             if manager.numberOfItems() > 0 {
                 restaurantCollectionView.backgroundView = nil
             } else {
@@ -78,11 +80,21 @@ class RestaurantViewController: UIViewController {
         switch segue.identifier {
         case Segue.showDetailAfterRestaurantList.rawValue:
             if let nc = segue.destination as? UINavigationController, let vc = nc.topViewController as? RestaurantDetailViewController, let restaurant = selectedRestaurant {
-                vc.selectedRestaurant = restaurant
-                dump(selectedRestaurant)
+//                vc.selectedRestaurant = restaurant
+//                dump(selectedRestaurant)
             }
         default:
             print("There is not segue")
+        }
+    }
+
+    func loadMoreData(location: CLLocationCoordinate2D, start: Int?, filter: String?){
+        manager.fetchRestaurants(by: location, start: start ?? 0, withFilter: filter ?? "All") {
+
+            self.isMoreDataLoading = false
+            self.loadingMoreView!.stopAnimating()
+            //insert values in the collectionView
+            
         }
     }
 }
@@ -94,7 +106,7 @@ extension RestaurantViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "restaurantCell", for: indexPath) as! RestaurantCell
-        cell.restaurant = manager.restaurantItem(at: indexPath)
+//        cell.restaurant = manager.restaurantItem(at: indexPath)
         return cell
     }
 
@@ -136,9 +148,10 @@ extension RestaurantViewController: UIScrollViewDelegate {
                 loadingMoreView?.frame = frame
                 loadingMoreView!.startAnimating()
 
+
                 //TODO: Code to load more results
-                manager.loadMoreData()
-                
+//                manager.loadMoreData()
+
             }
 
         }

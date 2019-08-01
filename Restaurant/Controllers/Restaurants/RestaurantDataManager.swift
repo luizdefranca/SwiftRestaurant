@@ -7,37 +7,48 @@
 //
 
 import Foundation
+import MapKit
 
 class RestaurantDataManager {
 
-    private var items: [RestaurantItem] = []
+    private var items: [Restaurant] = []
+
     
-    func fetch(by location: String, withFilter: String = "All", onComplete:() -> Swift.Void){
-        var restaurants: [RestaurantItem] = []
+//    func fetch(by location: String, withFilter: String = "All", onComplete:() -> Swift.Void){
+//        var restaurants: [RestaurantItem] = []
+//
+//
+//        for restaurant in RestaurantAPIManager.loadJSON(file: location)  {
+//            restaurants.append(RestaurantItem(dict: restaurant))
+//        }
+//
+//        if withFilter != "All" {
+//            items = restaurants.filter({ $0.cuisines.contains(withFilter)})
+//        } else {
+//            items = restaurants
+//        }
+//        onComplete()
+//    }
 
-
-        for restaurant in RestaurantAPIManager.loadJSON(file: location)  {
-            restaurants.append(RestaurantItem(dict: restaurant))
+    func fetchRestaurants(by location:CLLocationCoordinate2D, start: Int = 0, withFilter: String = "All", onComplete:() -> Swift.Void) {
+        var restaurants: [Restaurant] = []
+        RestaurantAPIManager.fetchRestaurant(byLatitude: location.latitude, andLongitude: location.longitude) { restaurants in
+            guard let restaurants = restaurants else {
+                print("restaurant array is null - \(#file) - \(#line)")
+                return
+            }
+            self.items = restaurants
         }
-
-        if withFilter != "All" {
-            items = restaurants.filter({ $0.cuisines.contains(withFilter)})
-        } else {
-            items = restaurants
-        }
-        onComplete()
     }
 
     func numberOfItems() -> Int {
         return items.count
     }
 
-    func restaurantItem(at index: IndexPath) -> RestaurantItem {
+    func restaurantItem(at index: IndexPath) -> Restaurant {
         let row = index.item
         return items[row]
     }
 
-    func loadMoreData(){
-
-    }
+    
 }
