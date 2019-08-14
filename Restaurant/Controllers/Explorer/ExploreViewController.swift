@@ -12,12 +12,14 @@ import MapKit
 class ExploreViewController: UIViewController{
 
 
-
     @IBOutlet weak var collectionView: UICollectionView!
     private let manager : ExploreDataManager = ExploreDataManager()
 
     var selectedCity: LocationItem?
     var headerView : ExploreHeaderView!
+
+    var currentLocation : CLLocation = CLLocation()
+    var locationManager : CLLocationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,15 @@ class ExploreViewController: UIViewController{
             let t = vc.restorationIdentifier
             print(t)
         }
+
+        setupLocationManager()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
+    /*
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
         case Segue.restaurantList.rawValue:
@@ -45,16 +50,22 @@ class ExploreViewController: UIViewController{
             return true
         }
     }
-
+     */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case Segue.locationList.rawValue:
-            showLocationList(segue: segue)
-        case Segue.restaurantList.rawValue:
-            showRestaurantListing(segue: segue)
-        default:
-            print("There is not segue")
+        if segue.identifier == Segue.restaurantList.rawValue {
+              showRestaurantListing(segue: segue)
+        } else {
+            print("There's no segue")
         }
+
+//        switch segue.identifier {
+//        case Segue.locationList.rawValue:
+//            showLocationList(segue: segue)
+//        case Segue.restaurantList.rawValue:
+//
+//        default:
+//            print("There is not segue")
+//        }
     }
 
     
@@ -76,19 +87,18 @@ class ExploreViewController: UIViewController{
 }
 
 private extension ExploreViewController {
-    func showLocationList (segue: UIStoryboardSegue) {
-        guard let navController = segue.destination as? UINavigationController, let viewController = navController.topViewController as? LocationViewController
-        else { return }
-        guard let city = selectedCity else { return  }
-        viewController.selectedCity = city
-    }
+//    func showLocationList (segue: UIStoryboardSegue) {
+//        guard let navController = segue.destination as? UINavigationController, let viewController = navController.topViewController as? LocationViewController
+//        else { return }
+//        guard let city = selectedCity else { return  }
+//        viewController.selectedCity = city
+//    }
 
     func showRestaurantListing(segue: UIStoryboardSegue){
         if let vc = segue.destination as? RestaurantViewController,
-        let city = selectedCity,
         let index = collectionView.indexPathsForSelectedItems?.first,
             let type = manager.explore(at: index)?.name {
-            vc.selectedCity = city
+            vc.currentLocation = currentLocation
             vc.selectedType = type
         }
     }
@@ -104,6 +114,7 @@ extension ExploreViewController: UICollectionViewDelegate {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         collectionView.reloadData()
     }
+
 }
 
 extension ExploreViewController: UICollectionViewDataSource {
@@ -160,5 +171,30 @@ extension ExploreViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.collectionView.frame.width, height: 100)
+    }
+}
+
+extension ExploreViewController {
+    func setupLocationManager() {
+        //setup location manager
+        locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+    }
+}
+
+extension ExploreViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways || status == .authorizedWhenInUse {
+            manager.startUpdatingLocation()
+        } else {
+            manager.requestWhenInUseAuthorization()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let currentLocation = locations.first else { return }
+        self.currentLocation = currentLocation
+        print(currentLocation)
     }
 }

@@ -12,7 +12,7 @@ import MapKit
 class RestaurantDetailViewController: UITableViewController {
 
 
-    var selectedRestaurant: RestaurantItem?
+    var selectedRestaurant: Restaurant?
     var startLoading: Int = 0
     var loadingRestaurant = false
     @IBOutlet weak var btnHeart: UIBarButtonItem!

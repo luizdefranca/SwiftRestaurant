@@ -11,7 +11,7 @@ import MapKit
 
 class RestaurantDataManager {
 
-    private var items: [Restaurant] = []
+     var items: [Restaurant]  = []
 
     
 //    func fetch(by location: String, withFilter: String = "All", onComplete:() -> Swift.Void){
@@ -30,15 +30,22 @@ class RestaurantDataManager {
 //        onComplete()
 //    }
 
-    func fetchRestaurants(by location:CLLocationCoordinate2D, start: Int = 0, withFilter: String = "All", onComplete:() -> Swift.Void) {
-        var restaurants: [Restaurant] = []
-        RestaurantAPIManager.fetchRestaurant(byLatitude: location.latitude, andLongitude: location.longitude) { restaurants in
-            guard let restaurants = restaurants else {
+    func fetchRestaurants(by location:CLLocationCoordinate2D, start: Int = 0, withFilter: String = "All", onComplete:([Restaurant]) -> ()) {
+        var restaurantsT: [Restaurant] = []
+
+        defer {
+                onComplete(restaurantsT)
+        }
+        RestaurantAPIManager.fetchRestaurant(byLatitude: location.latitude, andLongitude: location.longitude) { restaurantsItems in
+            guard let restaurantsItems = restaurantsItems else {
                 print("restaurant array is null - \(#file) - \(#line)")
                 return
             }
-            self.items = restaurants
+
+                restaurantsT = restaurantsItems
+
         }
+//        onComplete(restaurantsT)
     }
 
     func numberOfItems() -> Int {
@@ -50,5 +57,5 @@ class RestaurantDataManager {
         return items[row]
     }
 
-    
+
 }

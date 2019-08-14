@@ -12,11 +12,11 @@ class RestaurantCell: UICollectionViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblCuisine: UILabel!
     @IBOutlet weak var imgRestaurant: UIImageView!
-    var restaurant: RestaurantItem? {
+    var restaurant: Restaurant? {
         didSet {
-            lblTitle.text = self.restaurant?.name
-            lblCuisine.text = self.restaurant?.cuisines.joined(separator: " | ")
-            if let url = URL(string: restaurant?.imageURL ?? ""){
+                lblTitle.text = self.restaurant?.name ?? "No name"
+                lblCuisine.text = self.restaurant?.cuisines.joined(separator: " | ") ?? ""
+                if let url = URL(string: restaurant?.imageURL ?? ""){
 
                 let data = try? Data(contentsOf: url)
                 if let imageData = data {

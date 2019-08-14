@@ -13,7 +13,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
 
     let manager = MapDataManager()
-    var selectedRestaurant: RestaurantItem?
+    var selectedRestaurant: Restaurant?
     override func viewDidLoad() {
         super.viewDidLoad()
         initial()
@@ -84,7 +84,7 @@ extension MapViewController : MKMapViewDelegate {
 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         guard let annotation = mapView.selectedAnnotations.first else {return}
-        selectedRestaurant = annotation as? RestaurantItem
+        selectedRestaurant = annotation as? Restaurant
         self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: self)
     }
 }
