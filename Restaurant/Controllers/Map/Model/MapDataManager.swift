@@ -9,18 +9,18 @@
 import UIKit
 import MapKit
 class MapDataManager : DataManager {
-    fileprivate var items: [RestaurantItem] = []
+    fileprivate var items: [Restaurant] = []
 
 
 
-    var annotations: [RestaurantItem] {
+    var annotations: [Restaurant] {
         return items
     }
 
 
-    func fetch( completion: (_ annotations: [RestaurantItem]) -> ()){
+    func fetch( completion: (_ annotations: [Restaurant]) -> ()){
         for data in load(file: "MapLocations") {
-            items.append(RestaurantItem(dict: data))
+            items.append(Restaurant(dict: data))
         }
         completion(items)
     }

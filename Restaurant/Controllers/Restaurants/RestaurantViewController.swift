@@ -23,7 +23,8 @@ class RestaurantViewController: UIViewController {
         //Uploading data
         var isMoreDataLoading = false
         var loadingMoreView: InfiniteScrollActivityView?
-
+        var delegate: RestaurantTabBarControllerDelegate?
+        
         //Location
         var currentLocation: CLLocation = CLLocation()
 
@@ -31,6 +32,7 @@ class RestaurantViewController: UIViewController {
         override func viewDidLoad() {
                 super.viewDidLoad()
                 setupCollectionView()
+
                 createData()
                 //        setupTitle()
                 //                updateView()
@@ -40,7 +42,9 @@ class RestaurantViewController: UIViewController {
 
         }
 
-
+        deinit {
+              NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init("code.luizramos.Restaurant.updateRestaurants"), object: nil)
+        }
 
         override func viewDidAppear(_ animated: Bool) {
                 super.viewDidAppear(animated)
@@ -62,8 +66,11 @@ class RestaurantViewController: UIViewController {
                                 return
                         }
                         DispatchQueue.main.async {
+
+
                                 self.restaurants = restaurants
                                 self.updateView()
+                                self.delegate?.setRestaurant(restaurants: restaurants)
                         }
 
 
@@ -78,6 +85,7 @@ class RestaurantViewController: UIViewController {
         }
 
         func updateView() {
+                 NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "code.luizramos.Restaurant.updateRestaurants"), object: restaurants)
                 if self.restaurants.count > 0 {
                         self.restaurantCollectionView.backgroundView = nil
                 } else {
@@ -200,3 +208,4 @@ extension RestaurantViewController: UIScrollViewDelegate {
                 }
         }
 }
+

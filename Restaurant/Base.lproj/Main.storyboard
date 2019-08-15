@@ -541,10 +541,10 @@
             </objects>
             <point key="canvasLocation" x="1712" y="-1252"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Restaurant Tab Bar Controller-->
         <scene sceneID="SgC-cg-fCi">
             <objects>
-                <tabBarController modalTransitionStyle="flipHorizontal" id="iCr-yr-JR3" sceneMemberID="viewController">
+                <tabBarController modalTransitionStyle="flipHorizontal" id="iCr-yr-JR3" customClass="RestaurantTabBarController" customModule="Restaurant" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zhr-fD-ncb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

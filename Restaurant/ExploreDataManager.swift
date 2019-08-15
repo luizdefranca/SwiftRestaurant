@@ -16,7 +16,7 @@ class ExploreDataManager : DataManager {
         fetch()
     }
     func fetch() {
-        for data in load(file: "ExploreData") {
+        for data in load(file: "Establishments") {
             items.append(ExploreItem(dict: data))
         }
     }

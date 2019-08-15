@@ -55,6 +55,37 @@
 		254D1A7B22D4FDF9000DF924 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 254D1A7A22D4FDF9000DF924 /* RestaurantViewController.swift */; };
 		254D1A7F22D509E5000DF924 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 254D1A7E22D509E4000DF924 /* Assets.xcassets */; };
 		25E0AEF022E1856B0010602F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E0AEEF22E1856B0010602F /* Restaurant.swift */; };
+		25F410782304DE670016EF25 /* fast_casual.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4106E2304DE660016EF25 /* fast_casual.jpg */; };
+		25F410792304DE670016EF25 /* bakery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4106F2304DE660016EF25 /* bakery.jpg */; };
+		25F4107A2304DE670016EF25 /* dessert_parlour.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410702304DE660016EF25 /* dessert_parlour.jpg */; };
+		25F4107B2304DE670016EF25 /* casual_dining.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410712304DE660016EF25 /* casual_dining.jpg */; };
+		25F4107C2304DE670016EF25 /* quick_bites.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410722304DE660016EF25 /* quick_bites.jpg */; };
+		25F4107D2304DE670016EF25 /* fast_food.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410732304DE660016EF25 /* fast_food.jpg */; };
+		25F4107E2304DE670016EF25 /* beer_garden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410742304DE660016EF25 /* beer_garden.jpg */; };
+		25F4107F2304DE670016EF25 /* noodle_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410752304DE660016EF25 /* noodle_shop.jpg */; };
+		25F410972304E5970016EF25 /* sandwich_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410822304E5950016EF25 /* sandwich_shop.jpg */; };
+		25F410982304E5970016EF25 /* cafe.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410832304E5950016EF25 /* cafe.jpg */; };
+		25F410992304E5970016EF25 /* wine_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410842304E5960016EF25 /* wine_bar.jpg */; };
+		25F4109A2304E5970016EF25 /* fine_dining.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410852304E5960016EF25 /* fine_dining.jpg */; };
+		25F4109B2304E5970016EF25 /* lounge.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410862304E5960016EF25 /* lounge.jpg */; };
+		25F4109C2304E5970016EF25 /* pizzeria.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410872304E5960016EF25 /* pizzeria.jpg */; };
+		25F4109D2304E5970016EF25 /* food_truck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410882304E5960016EF25 /* food_truck.jpg */; };
+		25F4109E2304E5970016EF25 /* microbrewery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410892304E5960016EF25 /* microbrewery.jpg */; };
+		25F4109F2304E5970016EF25 /* cocktail_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108A2304E5960016EF25 /* cocktail_bar.jpg */; };
+		25F410A02304E5970016EF25 /* sweet_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108B2304E5960016EF25 /* sweet_shop.jpg */; };
+		25F410A12304E5970016EF25 /* bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108C2304E5960016EF25 /* bar.jpg */; };
+		25F410A22304E5970016EF25 /* club.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108D2304E5960016EF25 /* club.jpg */; };
+		25F410A32304E5970016EF25 /* pub.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108E2304E5970016EF25 /* pub.jpg */; };
+		25F410A42304E5970016EF25 /* coffee_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F4108F2304E5970016EF25 /* coffee_shop.jpg */; };
+		25F410A52304E5970016EF25 /* izakaya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410902304E5970016EF25 /* izakaya.jpg */; };
+		25F410A62304E5970016EF25 /* bistro.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410912304E5970016EF25 /* bistro.jpg */; };
+		25F410A72304E5970016EF25 /* beverage_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410922304E5970016EF25 /* beverage_shop.jpg */; };
+		25F410A82304E5970016EF25 /* ice_cream_shop.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410932304E5970016EF25 /* ice_cream_shop.jpg */; };
+		25F410A92304E5970016EF25 /* food_court.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410942304E5970016EF25 /* food_court.jpg */; };
+		25F410AA2304E5970016EF25 /* juice_bar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410952304E5970016EF25 /* juice_bar.jpg */; };
+		25F410AB2304E5970016EF25 /* brewery.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410962304E5970016EF25 /* brewery.jpg */; };
+		25F410AF2304E7180016EF25 /* steakhouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25F410AE2304E7170016EF25 /* steakhouse.jpg */; };
+		25F410B42304F2460016EF25 /* RestaurantTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F410B32304F2460016EF25 /* RestaurantTabBarController.swift */; };
 		A342B4C5B1D05DA1DCED384B /* Pods_Restaurant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72A23DCC577F30CCB074BEED /* Pods_Restaurant.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +141,37 @@
 		254D1A7A22D4FDF9000DF924 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		254D1A7E22D509E4000DF924 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E0AEEF22E1856B0010602F /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		25F4106E2304DE660016EF25 /* fast_casual.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fast_casual.jpg; sourceTree = "<group>"; };
+		25F4106F2304DE660016EF25 /* bakery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bakery.jpg; sourceTree = "<group>"; };
+		25F410702304DE660016EF25 /* dessert_parlour.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dessert_parlour.jpg; sourceTree = "<group>"; };
+		25F410712304DE660016EF25 /* casual_dining.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = casual_dining.jpg; sourceTree = "<group>"; };
+		25F410722304DE660016EF25 /* quick_bites.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = quick_bites.jpg; sourceTree = "<group>"; };
+		25F410732304DE660016EF25 /* fast_food.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fast_food.jpg; sourceTree = "<group>"; };
+		25F410742304DE660016EF25 /* beer_garden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beer_garden.jpg; sourceTree = "<group>"; };
+		25F410752304DE660016EF25 /* noodle_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noodle_shop.jpg; sourceTree = "<group>"; };
+		25F410822304E5950016EF25 /* sandwich_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sandwich_shop.jpg; sourceTree = "<group>"; };
+		25F410832304E5950016EF25 /* cafe.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cafe.jpg; sourceTree = "<group>"; };
+		25F410842304E5960016EF25 /* wine_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wine_bar.jpg; sourceTree = "<group>"; };
+		25F410852304E5960016EF25 /* fine_dining.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fine_dining.jpg; sourceTree = "<group>"; };
+		25F410862304E5960016EF25 /* lounge.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lounge.jpg; sourceTree = "<group>"; };
+		25F410872304E5960016EF25 /* pizzeria.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pizzeria.jpg; sourceTree = "<group>"; };
+		25F410882304E5960016EF25 /* food_truck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food_truck.jpg; sourceTree = "<group>"; };
+		25F410892304E5960016EF25 /* microbrewery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = microbrewery.jpg; sourceTree = "<group>"; };
+		25F4108A2304E5960016EF25 /* cocktail_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cocktail_bar.jpg; sourceTree = "<group>"; };
+		25F4108B2304E5960016EF25 /* sweet_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sweet_shop.jpg; sourceTree = "<group>"; };
+		25F4108C2304E5960016EF25 /* bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bar.jpg; sourceTree = "<group>"; };
+		25F4108D2304E5960016EF25 /* club.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = club.jpg; sourceTree = "<group>"; };
+		25F4108E2304E5970016EF25 /* pub.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pub.jpg; sourceTree = "<group>"; };
+		25F4108F2304E5970016EF25 /* coffee_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = coffee_shop.jpg; sourceTree = "<group>"; };
+		25F410902304E5970016EF25 /* izakaya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = izakaya.jpg; sourceTree = "<group>"; };
+		25F410912304E5970016EF25 /* bistro.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bistro.jpg; sourceTree = "<group>"; };
+		25F410922304E5970016EF25 /* beverage_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beverage_shop.jpg; sourceTree = "<group>"; };
+		25F410932304E5970016EF25 /* ice_cream_shop.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ice_cream_shop.jpg; sourceTree = "<group>"; };
+		25F410942304E5970016EF25 /* food_court.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = food_court.jpg; sourceTree = "<group>"; };
+		25F410952304E5970016EF25 /* juice_bar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = juice_bar.jpg; sourceTree = "<group>"; };
+		25F410962304E5970016EF25 /* brewery.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brewery.jpg; sourceTree = "<group>"; };
+		25F410AE2304E7170016EF25 /* steakhouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steakhouse.jpg; sourceTree = "<group>"; };
+		25F410B32304F2460016EF25 /* RestaurantTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTabBarController.swift; sourceTree = "<group>"; };
 		72A23DCC577F30CCB074BEED /* Pods_Restaurant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Restaurant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58051F2E8F47BEE769C65BD /* Pods-Restaurant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Restaurant.debug.xcconfig"; path = "Target Support Files/Pods-Restaurant/Pods-Restaurant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,6 +326,7 @@
 		2501B1A322DCF3D4005449A1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				25F410B02304EF1E0016EF25 /* TabBar */,
 				2501B1B422DEC204005449A1 /* Reviews */,
 				2501B1A422DCF406005449A1 /* Explorer */,
 				2501B15522D5B2A8005449A1 /* Restaurants */,
@@ -346,6 +409,7 @@
 		2533067A22D3B2BB006E8494 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				25F4106D2304DE3B0016EF25 /* Photos */,
 				2501B1A322DCF3D4005449A1 /* Controllers */,
 				2501B18322DCEBCA005449A1 /* APIManager */,
 				2533067B22D3B2BB006E8494 /* AppDelegate.swift */,
@@ -358,6 +422,51 @@
 				2533068222D3B2BB006E8494 /* Restaurant.xcdatamodeld */,
 			);
 			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		25F4106D2304DE3B0016EF25 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				25F4106F2304DE660016EF25 /* bakery.jpg */,
+				25F410742304DE660016EF25 /* beer_garden.jpg */,
+				25F410712304DE660016EF25 /* casual_dining.jpg */,
+				25F410702304DE660016EF25 /* dessert_parlour.jpg */,
+				25F4108C2304E5960016EF25 /* bar.jpg */,
+				25F410922304E5970016EF25 /* beverage_shop.jpg */,
+				25F410912304E5970016EF25 /* bistro.jpg */,
+				25F410962304E5970016EF25 /* brewery.jpg */,
+				25F410832304E5950016EF25 /* cafe.jpg */,
+				25F4108D2304E5960016EF25 /* club.jpg */,
+				25F4108A2304E5960016EF25 /* cocktail_bar.jpg */,
+				25F4108F2304E5970016EF25 /* coffee_shop.jpg */,
+				25F410852304E5960016EF25 /* fine_dining.jpg */,
+				25F410942304E5970016EF25 /* food_court.jpg */,
+				25F410882304E5960016EF25 /* food_truck.jpg */,
+				25F410932304E5970016EF25 /* ice_cream_shop.jpg */,
+				25F410902304E5970016EF25 /* izakaya.jpg */,
+				25F410AE2304E7170016EF25 /* steakhouse.jpg */,
+				25F410952304E5970016EF25 /* juice_bar.jpg */,
+				25F410862304E5960016EF25 /* lounge.jpg */,
+				25F410892304E5960016EF25 /* microbrewery.jpg */,
+				25F410872304E5960016EF25 /* pizzeria.jpg */,
+				25F4108E2304E5970016EF25 /* pub.jpg */,
+				25F410822304E5950016EF25 /* sandwich_shop.jpg */,
+				25F4108B2304E5960016EF25 /* sweet_shop.jpg */,
+				25F410842304E5960016EF25 /* wine_bar.jpg */,
+				25F4106E2304DE660016EF25 /* fast_casual.jpg */,
+				25F410732304DE660016EF25 /* fast_food.jpg */,
+				25F410752304DE660016EF25 /* noodle_shop.jpg */,
+				25F410722304DE660016EF25 /* quick_bites.jpg */,
+			);
+			name = Photos;
+			sourceTree = "<group>";
+		};
+		25F410B02304EF1E0016EF25 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				25F410B32304F2460016EF25 /* RestaurantTabBarController.swift */,
+			);
+			name = TabBar;
 			sourceTree = "<group>";
 		};
 		6A975626A85D95B82DA535E9 /* Frameworks */ = {
@@ -437,29 +546,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25F410972304E5970016EF25 /* sandwich_shop.jpg in Resources */,
+				25F410982304E5970016EF25 /* cafe.jpg in Resources */,
 				2501B14F22D59813005449A1 /* ExploreData.plist in Resources */,
 				2501B1BA22E0184B005449A1 /* Establishments.plist in Resources */,
 				2501B19F22DCF39C005449A1 /* Miami.json in Resources */,
+				25F410A92304E5970016EF25 /* food_court.jpg in Resources */,
 				2501B1A122DCF39C005449A1 /* San Antonio.json in Resources */,
 				2501B1B322DD7CE8005449A1 /* NoDataView.xib in Resources */,
+				25F410782304DE670016EF25 /* fast_casual.jpg in Resources */,
 				2533068922D3B2BE006E8494 /* LaunchScreen.storyboard in Resources */,
+				25F410A32304E5970016EF25 /* pub.jpg in Resources */,
+				25F4107A2304DE670016EF25 /* dessert_parlour.jpg in Resources */,
+				25F410792304DE670016EF25 /* bakery.jpg in Resources */,
 				2501B19822DCF39C005449A1 /* Las Vegas.json in Resources */,
 				2501B1A222DCF39C005449A1 /* New Orleans.json in Resources */,
+				25F410AB2304E5970016EF25 /* brewery.jpg in Resources */,
 				2501B19E22DCF39C005449A1 /* Charleston.json in Resources */,
+				25F410A42304E5970016EF25 /* coffee_shop.jpg in Resources */,
+				25F4109A2304E5970016EF25 /* fine_dining.jpg in Resources */,
 				2501B19522DCF39C005449A1 /* Chicago.json in Resources */,
+				25F410A52304E5970016EF25 /* izakaya.jpg in Resources */,
 				2501B19C22DCF39C005449A1 /* Philadelphia.json in Resources */,
+				25F4109C2304E5970016EF25 /* pizzeria.jpg in Resources */,
+				25F410A02304E5970016EF25 /* sweet_shop.jpg in Resources */,
+				25F410992304E5970016EF25 /* wine_bar.jpg in Resources */,
+				25F4109D2304E5970016EF25 /* food_truck.jpg in Resources */,
+				25F410A62304E5970016EF25 /* bistro.jpg in Resources */,
 				2501B19622DCF39C005449A1 /* Los Angeles.json in Resources */,
+				25F4107E2304DE670016EF25 /* beer_garden.jpg in Resources */,
+				25F410AF2304E7180016EF25 /* steakhouse.jpg in Resources */,
 				2501B1A022DCF39C005449A1 /* Boston.json in Resources */,
+				25F4109F2304E5970016EF25 /* cocktail_bar.jpg in Resources */,
 				2501B19722DCF39C005449A1 /* Houston.json in Resources */,
 				2501B19B22DCF39C005449A1 /* New York.json in Resources */,
+				25F4109E2304E5970016EF25 /* microbrewery.jpg in Resources */,
 				2501B19A22DCF39C005449A1 /* San Francisco.json in Resources */,
+				25F410A22304E5970016EF25 /* club.jpg in Resources */,
+				25F410A12304E5970016EF25 /* bar.jpg in Resources */,
+				25F4107B2304DE670016EF25 /* casual_dining.jpg in Resources */,
 				2501B19D22DCF39C005449A1 /* Aspen.json in Resources */,
 				254D1A7F22D509E5000DF924 /* Assets.xcassets in Resources */,
+				25F4107C2304DE670016EF25 /* quick_bites.jpg in Resources */,
 				2501B15F22D5BBC8005449A1 /* Locations.plist in Resources */,
+				25F4107F2304DE670016EF25 /* noodle_shop.jpg in Resources */,
 				2501B18122D78F5C005449A1 /* RestaurantDetail.storyboard in Resources */,
 				2501B19922DCF39C005449A1 /* Portland.json in Resources */,
+				25F4107D2304DE670016EF25 /* fast_food.jpg in Resources */,
 				2501B16F22D66F29005449A1 /* MapLocations.plist in Resources */,
 				2533068122D3B2BB006E8494 /* Main.storyboard in Resources */,
+				25F410A72304E5970016EF25 /* beverage_shop.jpg in Resources */,
+				25F410A82304E5970016EF25 /* ice_cream_shop.jpg in Resources */,
+				25F4109B2304E5970016EF25 /* lounge.jpg in Resources */,
+				25F410AA2304E5970016EF25 /* juice_bar.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +657,7 @@
 				2501B1A722DCF66D005449A1 /* ExploreHeaderView.swift in Sources */,
 				2501B14D22D571F7005449A1 /* ExploreItem.swift in Sources */,
 				2501B1A922DD0D62005449A1 /* LocationItem.swift in Sources */,
+				25F410B42304F2460016EF25 /* RestaurantTabBarController.swift in Sources */,
 				2501B16A22D66804005449A1 /* DataManager.swift in Sources */,
 				2501B16722D6658F005449A1 /* MapDataManager.swift in Sources */,
 				2501B1B622DEC24A005449A1 /* RatingsView.swift in Sources */,

@@ -24,9 +24,13 @@ class ExploreViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        
+        if let vc = tabBarController?.viewControllers?[1] as? MapViewController {
+                NotificationCenter.default.addObserver(vc.self, selector: #selector(vc.updateRestaurants(_ :)), name: NSNotification.Name("code.luizramos.Restaurant.updateRestaurants"), object: nil)
+        }
         for vc in tabBarController!.viewControllers!  {
-            let t = vc.restorationIdentifier
+
+
+                let t = vc.restorationIdentifier
             print(t)
         }
 
@@ -99,6 +103,8 @@ private extension ExploreViewController {
         let index = collectionView.indexPathsForSelectedItems?.first,
             let type = manager.explore(at: index)?.name {
             vc.currentLocation = currentLocation
+                let restaurantTabBarController = tabBarController as! RestaurantTabBarController
+                vc.delegate = restaurantTabBarController
             vc.selectedType = type
         }
     }
@@ -181,6 +187,8 @@ extension ExploreViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
     }
+
+
 }
 
 extension ExploreViewController: CLLocationManagerDelegate {
@@ -195,6 +203,6 @@ extension ExploreViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let currentLocation = locations.first else { return }
         self.currentLocation = currentLocation
-        print(currentLocation)
+//        print(currentLocation)
     }
 }
